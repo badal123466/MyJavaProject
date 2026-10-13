@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Appointments - City Care Hospital</title>
+
+<link rel="stylesheet"
+      href="css/style.css">
+
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+
+<h2>🏥 City Care Hospital</h2>
+
+<button onclick="logout()">
+    Logout
+</button>
+
+
+</header>
+
+<div class="layout">
+
+
+<aside>
+
+    <a href="dashboard.html">
+        Dashboard
+    </a>
+
+    <a href="patients.html">
+        Patients
+    </a>
+
+    <a href="doctors.html">
+        Doctors
+    </a>
+
+    <a href="departments.html">
+        Departments
+    </a>
+
+    <a href="appointments.html">
+        Appointments
+    </a>
+
+    <a href="billing.html">
+        Billing
+    </a>
+
+</aside>
+
+
+<main>
+
+    <h1>Appointment Management</h1>
+
+
+    <div class="panel">
+
+        <h2>Create Appointment</h2>
+
+        <form id="appointmentForm">
+
+            <select
+                id="patientId"
+                required>
+
+                <option value="">
+                    Select Patient
+                </option>
+
+            </select>
+
+
+            <select
+                id="doctorId"
+                required>
+
+                <option value="">
+                    Select Doctor
+                </option>
+
+            </select>
+
+
+            <input
+                id="appointmentDate"
+                type="date"
+                required>
+
+
+            <input
+                id="appointmentTime"
+                type="time"
+                required>
+
+
+            <input
+                id="reason"
+                placeholder="Reason"
+                required>
+
+
+            <button type="submit">
+                Create Appointment
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="panel">
+
+        <h2>Appointment List</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Code</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Reason</th>
+                <th>Status</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="appointmentTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+</div>
+
+<script src="js/appointments.js"></script>
+</body>
+</html>

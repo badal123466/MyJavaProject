@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - City Care Hospital</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <h2>🏥 City Care Hospital</h2>
+
+    <button type="button"
+            onclick="logout()">
+        Logout
+    </button>
+
+</header>
+
+
+<div class="layout">
+
+    <aside>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="patients.html">
+            Patients
+        </a>
+
+        <a href="doctors.html">
+            Doctors
+        </a>
+
+        <a href="departments.html">
+            Departments
+        </a>
+
+        <a href="appointments.html">
+            Appointments
+        </a>
+
+        <a href="billing.html">
+            Billing
+        </a>
+
+    </aside>
+
+
+    <main>
+
+        <h1>Dashboard</h1>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Patients</h3>
+
+                <h2 id="patientCount">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Total Doctors</h3>
+
+                <h2 id="doctorCount">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Departments</h3>
+
+                <h2 id="departmentCount">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Today's Appointments</h3>
+
+                <h2 id="appointmentCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>Hospital Management</h2>
+
+            <p>
+                Manage patients, doctors,
+                departments, appointments
+                and billing.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>City Care Hospital</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #00acc1,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #1565c0,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #02131f,
+            #063d54,
+            #021b2a
+        );
+}
+
+
+/* =========================
+   FLOWER BACKGROUND
+========================= */
+
+.flowers {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    left: 0;
+
+    top: 0;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   PETAL
+========================= */
+
+.petal {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 55px;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.65),
+            rgba(0,188,212,0.2)
+        );
+
+    border: 1px solid
+        rgba(255,255,255,0.3);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,255,255,0.25);
+
+    opacity: 0;
+
+    animation:
+        flowerMove linear infinite;
+}
+
+
+/* =========================
+   PETAL POSITIONS
+========================= */
+
+.petal:nth-child(1) {
+
+    left: 5%;
+
+    top: 20%;
+
+    animation-duration: 10s;
+}
+
+
+.petal:nth-child(2) {
+
+    left: 15%;
+
+    top: 70%;
+
+    width: 25px;
+
+    height: 40px;
+
+    animation-duration: 13s;
+
+    animation-delay: 2s;
+}
+
+
+.petal:nth-child(3) {
+
+    left: 27%;
+
+    top: 10%;
+
+    width: 45px;
+
+    height: 65px;
+
+    animation-duration: 15s;
+
+    animation-delay: 1s;
+}
+
+
+.petal:nth-child(4) {
+
+    left: 40%;
+
+    top: 80%;
+
+    width: 30px;
+
+    height: 45px;
+
+    animation-duration: 11s;
+
+    animation-delay: 3s;
+}
+
+
+.petal:nth-child(5) {
+
+    left: 55%;
+
+    top: 15%;
+
+    width: 40px;
+
+    height: 60px;
+
+    animation-duration: 14s;
+
+    animation-delay: 2s;
+}
+
+
+.petal:nth-child(6) {
+
+    left: 70%;
+
+    top: 65%;
+
+    width: 28px;
+
+    height: 45px;
+
+    animation-duration: 12s;
+
+    animation-delay: 4s;
+}
+
+
+.petal:nth-child(7) {
+
+    left: 82%;
+
+    top: 25%;
+
+    width: 45px;
+
+    height: 65px;
+
+    animation-duration: 16s;
+
+    animation-delay: 1s;
+}
+
+
+.petal:nth-child(8) {
+
+    left: 92%;
+
+    top: 75%;
+
+    width: 25px;
+
+    height: 40px;
+
+    animation-duration: 9s;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================
+   FLOWER ANIMATION
+========================= */
+
+@keyframes flowerMove {
+
+    0% {
+
+        transform:
+            translateY(100vh)
+            translateX(0)
+            rotate(0deg)
+            scale(0.6);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 0.8;
+    }
+
+    40% {
+
+        transform:
+            translateY(40vh)
+            translateX(60px)
+            rotate(120deg)
+            scale(1);
+    }
+
+    70% {
+
+        transform:
+            translateY(-20vh)
+            translateX(-60px)
+            rotate(240deg)
+            scale(1.1);
+
+        opacity: 0.7;
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh)
+            translateX(80px)
+            rotate(360deg)
+            scale(0.5);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   EXTRA FLOWER GLOW
+========================= */
+
+.flower-glow {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,188,212,0.15);
+
+    filter: blur(80px);
+
+    left: -100px;
+
+    bottom: -100px;
+
+    animation:
+        glowMove 8s ease-in-out infinite;
+
+    z-index: 1;
+}
+
+
+@keyframes glowMove {
+
+    0%,100% {
+
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+
+        transform:
+            translate(150px,-100px);
+    }
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.login-container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   MIDDLE LOGIN CARD
+========================= */
+
+.login-card {
+
+    width: 430px;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 35px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 0 0 8px
+        rgba(255,255,255,0.08),
+
+        0 30px 80px
+        rgba(0,0,0,0.55);
+
+    animation:
+        cardEnter 1.2s ease;
+
+    transition: 0.5s;
+}
+
+
+.login-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow:
+
+        0 0 0 12px
+        rgba(0,188,212,0.12),
+
+        0 40px 100px
+        rgba(0,0,0,0.6);
+}
+
+
+@keyframes cardEnter {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(80px)
+            scale(0.7);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   CARD DECORATION
+========================= */
+
+.login-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,188,212,0.08);
+
+    top: -120px;
+
+    right: -100px;
+}
+
+
+.login-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(21,101,192,0.06);
+
+    bottom: -80px;
+
+    left: -70px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+
+    width: 100px;
+
+    height: 100px;
+
+    margin:
+        0 auto 22px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e3f2fd,
+            #b3e5fc
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 10px 30px
+        rgba(21,101,192,0.3);
+
+    animation:
+        logoFloat 3s ease-in-out infinite;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+@keyframes logoFloat {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(5deg);
+    }
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.login-card h1 {
+
+    color: #0d47a1;
+
+    font-size: 31px;
+
+    margin-bottom: 10px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.subtitle {
+
+    color: #555;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.welcome {
+
+    color: #333;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   ROUND LOGIN BUTTON
+========================= */
+
+.login-btn {
+
+    width: 230px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1565c0,
+            #00acc1
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 5;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 10px 25px
+        rgba(21,101,192,0.4);
+}
+
+
+.login-btn:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.06);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,172,193,0.55);
+
+    letter-spacing: 1px;
+}
+
+
+.login-btn:active {
+
+    transform:
+        scale(0.94);
+}
+
+
+/* =========================
+   BUTTON SHINE
+========================= */
+
+.login-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    transform:
+        skewX(-25deg);
+
+    transition: 0.7s;
+}
+
+
+.login-btn:hover::before {
+
+    left: 140%;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .login-card {
+
+        width: 100%;
+
+        padding: 35px 25px;
+    }
+
+    .login-card h1 {
+
+        font-size: 25px;
+    }
+
+    .logo {
+
+        width: 80px;
+
+        height: 80px;
+
+        font-size: 42px;
+    }
+
+    .login-btn {
+
+        width: 200px;
+
+        height: 50px;
+
+        font-size: 16px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     FLOWER PETALS
+========================= -->
+
+<div class="flowers">
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+    <div class="petal"></div>
+
+</div>
+
+
+<div class="flower-glow"></div>
+
+
+<!-- =========================
+     LOGIN
+========================= -->
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <div class="logo">
+            🏥
+        </div>
+
+        <h1>
+            City Care Hospital
+        </h1>
+
+        <p class="subtitle">
+            Hospital Management System
+        </p>
+
+        <p class="welcome">
+            Welcome to City Care Hospital
+        </p>
+
+        <button
+            class="login-btn"
+            onclick="goToLogin()">
+
+            Login →
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function goToLogin() {
+
+    window.location.href =
+        "login.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
